@@ -14,29 +14,49 @@ var B2 = 0;
 var estado = 0;
 
 // Leemos la entrada
-function readButtonValue() {
+function readButtonValue(){
     B1 = button1.value();
     B2 = button2.value();
     
-    if(B1==0 && B2 ==1){
-        if(estado == 0){
+    
+    if(estado == 0){
+        if(B1==0 && B2==1){
             estado = 1;
         }
-        else if(estado == 2){
+        else if(B1 == 1 && B2 ==0){
+            estado = 2;
+        }
+    }
+    
+    else if(estado == 1){
+        if(B1 == 1 && B2 ==0){
             personas--;
+            estado = 3;
+        }
+        else if(B1== 0 && B2 ==1){
+            //
+        }
+    }
+    else if(estado == 2){
+        if(B1 == 1 && B2 == 0){
+            //
+        }
+        else if(B1 == 0 && B2==1){
+            personas++;
+            estado = 3;
+        }
+
+    }
+    else if(estado==3){
+     if(B1==0 && B2==0){
             estado = 0;
         }
     }
     
-    else if (B1==1 && B2==0){
-        if(estado == 0){
-            estado = 2;
-        }
-        else if(estado == 1){
-            personas++;
-            estado = 0;
-        }
-    }
+    console.log("ESTADO  "+estado)
     console.log(personas);
+    
+
 }
+
 setInterval(readButtonValue, 100);
