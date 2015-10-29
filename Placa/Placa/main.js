@@ -62,9 +62,14 @@ function readButtonValue(){
     
     
     myLCD.clear();
+    myLCD.setColor(65,65,65)
 		myLCD.setCursor(0,0);
-		myLCD.write("Pers: "+personas);
+		myLCD.write("Personas: "+personas);
+    //    myLCD.setCursor(1,0);
+  //      myLCD.write("AFORO SUPERADO");
 
 }
 
 setInterval(readButtonValue, 100);
+
+
