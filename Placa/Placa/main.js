@@ -8,10 +8,14 @@ var button2 = new groveSensor.GroveButton(6);
 var personas = 0;
 
 
+var LCD  = require ('jsupm_i2clcd');
+
 var B1 = 0;
 var B2 = 0;
 
 var estado = 0;
+
+var myLCD = new LCD.Jhd1313m1(6, 0x3E, 0x62);
 
 // Leemos la entrada
 function readButtonValue(){
@@ -56,6 +60,10 @@ function readButtonValue(){
     console.log("ESTADO  "+estado)
     console.log(personas);
     
+    
+    myLCD.clear();
+		myLCD.setCursor(0,0);
+		myLCD.write("Pers: "+personas);
 
 }
 
