@@ -1,5 +1,7 @@
 // Cargamos gove
 var groveSensor = require('jsupm_grove');
+var request = require('request');
+
 
 // Ponemos el boton en el 5
 var button1 = new groveSensor.GroveButton(5);
@@ -16,6 +18,8 @@ var B2 = 0;
 var estado = 0;
 
 var myLCD = new LCD.Jhd1313m1(6, 0x3E, 0x62);
+
+
 
 // Leemos la entrada
 function readButtonValue(){
@@ -65,11 +69,25 @@ function readButtonValue(){
     myLCD.setColor(65,65,65)
 		myLCD.setCursor(0,0);
 		myLCD.write("Personas: "+personas);
-    //    myLCD.setCursor(1,0);
-  //      myLCD.write("AFORO SUPERADO");
+    
+    
+
 
 }
 
 setInterval(readButtonValue, 100);
 
 
+function enviar(){
+    request.post(
+        'http://howmanypeople-iblancasa.c9.io/edison',
+        { form: { personas: personas } },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body)
+            }
+        }
+    );
+}
+
+setInterval(enviar,60000);
