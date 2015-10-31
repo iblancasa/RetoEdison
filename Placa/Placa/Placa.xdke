@@ -15,8 +15,8 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1446198846791,
-        "modified": 1446198846791,
+        "previousModTime": 1446199088872,
+        "modified": 1446199088872,
         "seen": true,
         "name": "main.js"
       },
@@ -33,8 +33,8 @@
         "name": "Placa.xdk"
       },
       "Placa.xdke": {
-        "previousModTime": 1446197102380,
-        "modified": 1446197102380,
+        "previousModTime": 1446198900330,
+        "modified": 1446198900330,
         "seen": true,
         "name": "Placa.xdke"
       },
@@ -49,11 +49,29 @@
         "modified": 1446131859211,
         "seen": true,
         "name": "xdk/project-info.json"
+      },
+      ".gitignore": {
+        "previousModTime": 1446199137421,
+        "modified": 1446199137421,
+        "seen": true,
+        "name": ".gitignore"
       }
     },
     "boardFileStatus": {
+      "icon.png": {
+        "previousModTime": 1446206665872
+      },
       "main.js": {
-        "previousModTime": 1446198900314
+        "previousModTime": 1446206665872
+      },
+      "package.json": {
+        "previousModTime": 1446206665872
+      },
+      "README.md": {
+        "previousModTime": 1446206665872
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1446206665872
       }
     }
   }
